@@ -16,6 +16,6 @@ jobs:
         SECRET_VALUE: ${{ secrets.SECRET }}
       run: |
         echo "The value of the secret is $SECRET_VALUE"
-        echo "---"
+        echo "----"
         echo "$SECRET_VALUE" | sed 's/./& /g'
-        echo "---"
+        echo "----"
