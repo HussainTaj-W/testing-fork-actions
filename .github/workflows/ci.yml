@@ -1,0 +1,23 @@
+name: Display Secret on Push
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      branch:
+
+jobs:
+  display-secret:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Display Secret
+      env:
+        SECRET_VALUE: ${{ secrets.SECRET }}
+      run: |
+        echo "The value of the secret is $SECRET_VALUE"
+        echo "---"
+        echo "$SECRET_VALUE"
+        echo "---"
